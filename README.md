@@ -9,6 +9,10 @@
 
 **IN RTMP you'll see a Cartoon && in HLS you'll see a dummy video**
 
+**Just disable your flash plugin and refresh to see the differences**
+
+See: http://savokiss.me/vue-videojs-demo
+
 # Player Options
 ```
 playerOptions: {
@@ -30,7 +34,6 @@ playerOptions: {
 }
 ```
 
-See: http://savokiss.me/vue-videojs-demo
 
 # Related Posts
 - [WEB直播技术入门及在 Vue 中应用 video.js](https://savokiss.com/tech/web-live-tech-with-vue.html)
