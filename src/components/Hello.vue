@@ -2,7 +2,8 @@
   <div class="hello">
     <h1>Vue Video.js Demo</h1>
     <p>Current Stream: {{ currentStream }}</p>
-    <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions">
+    <p>Current Tech: {{ currentTech }}</p>
+    <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions" @ready="onPlayerReadied">
     </video-player>
   </div>
 </template>
@@ -12,7 +13,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      currentStream: '',
+      currentTech: '',
       playerOptions: {
         autoplay: false,
         controls: true,
@@ -37,6 +38,19 @@ export default {
         //   fullscreenToggle: true // 全屏
         // },
       }
+    }
+  },
+  computed: {
+    player() {
+      return this.$refs.videoPlayer.player
+    },
+    currentStream() {
+      return this.currentTech === 'Flash' ? 'RTMP' : 'HLS'
+    }
+  },
+  methods: {
+    onPlayerReadied() {
+      this.currentTech = this.player.techName_
     }
   }
 }
