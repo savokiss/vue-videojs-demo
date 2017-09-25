@@ -5,6 +5,16 @@
     <p>Current Tech: {{ currentTech }}</p>
     <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions" @ready="onPlayerReadied">
     </video-player>
+    <h2>Input your streams link below</h2>
+    <div class="inputWrapper" v-if="currentStream==='RTMP'">
+      RTMP: <input type="text" v-model="streams.rtmp">
+    </div>
+    <div class="inputWrapper" v-else>
+      HLS: <input type="text" v-model="streams.hls">
+    </div>
+    <div class="buttonWrapper">
+      <button type="button" @click="changeStream">Apply</button>
+    </div>
   </div>
 </template>
 
@@ -14,6 +24,10 @@ export default {
   data () {
     return {
       currentTech: '',
+      streams: {
+        rtmp: '',
+        hls: ''
+      },
       playerOptions: {
         autoplay: false,
         controls: true,
@@ -41,16 +55,21 @@ export default {
     }
   },
   computed: {
-    player() {
+    player () {
       return this.$refs.videoPlayer.player
     },
-    currentStream() {
+    currentStream () {
       return this.currentTech === 'Flash' ? 'RTMP' : 'HLS'
     }
   },
   methods: {
-    onPlayerReadied() {
+    onPlayerReadied () {
       this.currentTech = this.player.techName_
+    },
+    changeStream () {
+      this.playerOptions.sources[1].src = this.streams.hls
+      this.playerOptions.sources[0].src = this.streams.rtmp
+      this.playerOptions.autoplay = true
     }
   }
 }
@@ -74,5 +93,17 @@ li {
 
 a {
   color: #42b983;
+}
+
+.inputWrapper {
+  margin: 20px;
+}
+
+.inputWrapper input {
+  width: 200px;
+}
+
+.buttonWrapper {
+  text-align: center;
 }
 </style>
