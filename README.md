@@ -7,7 +7,7 @@
 - Player support auto switch streams
 - Auto detect stream & tech
 
-**IN RTMP you'll see a Cartoon && in HLS you'll see a dummy video**
+**In RTMP you'll see a Cartoon && in HLS you'll see a dummy video**
 
 **Just disable your flash plugin and refresh to see the differences**
 
