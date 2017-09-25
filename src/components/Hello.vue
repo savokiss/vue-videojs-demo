@@ -1,5 +1,7 @@
 <template>
   <div class="hello">
+    <h1>Vue Video.js Demo</h1>
+    <p>Current Stream: {{ currentStream }}</p>
     <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions">
     </video-player>
   </div>
@@ -10,6 +12,7 @@ export default {
   name: 'hello',
   data () {
     return {
+      currentStream: '',
       playerOptions: {
         autoplay: false,
         controls: true,
@@ -25,7 +28,7 @@ export default {
           type: 'application/x-mpegURL',
           src: 'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
         }],
-        poster: 'assets/logo.png',
+        poster: '/static/images/logo.png',
         // controlBar: {
         //   timeDivider: false, // 时间分割线
         //   durationDisplay: false, // 总时间
@@ -39,7 +42,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1,
 h2 {
