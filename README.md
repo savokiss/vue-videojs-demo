@@ -1,11 +1,13 @@
 # vue-videojs-demo
 
-> Use videojs with vue to play RTMP && HLS streams
+> Use video.js with vue to play RTMP && HLS streams
 
 # Features
 - Play RTMP & HLS videos
 - Player support auto switch streams
 - Auto detect stream & tech
+
+**IN RTMP you'll see a Cartoon && in HLS you'll see a dummy video**
 
 # Player Options
 ```
