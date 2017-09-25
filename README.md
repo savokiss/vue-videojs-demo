@@ -1,21 +1,35 @@
-# player-demo
+# vue-videojs-demo
 
-> A Vue.js project
+> Use videojs with vue to play RTMP && HLS streams
 
-## Build Setup
+# Features
+- Play RTMP & HLS videos
+- Player support auto switch streams
+- Auto detect stream & tech
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+# Player Options
+```
+playerOptions: {
+  autoplay: false,
+  controls: true,
+  techOrder: ['flash', 'html5'],
+  sourceOrder: true,
+  flash: { hls: { withCredentials: false } },
+  html5: { hls: { withCredentials: false } },
+  sources: [{
+    type: 'rtmp/mp4',
+    src: 'rtmp://184.72.239.149/vod/&mp4:BigBuckBunny_115k.mov'
+  }, {
+    withCredentials: false,
+    type: 'application/x-mpegURL',
+    src: 'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
+  }],
+  poster: '/static/images/logo.png'
+}
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+See: http://savokiss.me/vue-videojs-demo
+
+# Related Posts
+- [WEB直播技术入门及在 Vue 中应用 video.js](https://savokiss.com/tech/web-live-tech-with-vue.html)
+
