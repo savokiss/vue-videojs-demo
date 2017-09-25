@@ -6,6 +6,7 @@
 - Play RTMP & HLS videos
 - Player support auto switch streams
 - Auto detect stream & tech
+- Custom link support
 
 **In RTMP you'll see a cartoon && in HLS you'll see a dummy video**
 
