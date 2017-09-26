@@ -25,6 +25,10 @@ var webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
+    // fix online e is not a function. see: https://github.com/videojs/videojs-contrib-hls/issues/600
+    new webpack.DefinePlugin({
+      'typeof global': JSON.stringify('undefined')
+    }),
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env
