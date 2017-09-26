@@ -5,7 +5,7 @@
     <p>Current Tech: {{ currentTech }}</p>
     <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions" @ready="onPlayerReadied">
     </video-player>
-    <h2>Input your streams link below</h2>
+    <h2>Enter your streams link below</h2>
     <div class="inputWrapper" v-if="currentStream==='RTMP'">
       RTMP: <input type="text" v-model="streams.rtmp">
     </div>
@@ -43,7 +43,7 @@ export default {
           type: 'application/x-mpegURL',
           src: 'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
         }],
-        poster: '/static/images/logo.png',
+        poster: '/vue-videojs-demo/static/images/logo.png',
         // controlBar: {
         //   timeDivider: false, // 时间分割线
         //   durationDisplay: false, // 总时间
