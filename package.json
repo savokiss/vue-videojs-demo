@@ -1,6 +1,6 @@
 {
-  "name": "player-demo",
-  "version": "1.0.0",
+  "name": "vue-videojs-demo",
+  "version": "1.0.1",
   "description": "A Vue.js project",
   "author": "savokiss <jaynaruto@qq.com>",
   "private": true,

@@ -2,17 +2,20 @@
 
 > Use video.js with vue to play RTMP && HLS streams
 
-# Features
-- Play RTMP & HLS videos
-- Player support auto switch streams
-- Auto detect stream & tech
-- Custom link support
+# Get Started
+
+See: http://savokiss.me/vue-videojs-demo
 
 **In RTMP you'll see a cartoon && in HLS you'll see a dummy video**
 
-**Just disable your flash plugin and refresh to see the differences**
+**Just switch tech to see the differences**
 
-See: http://savokiss.me/vue-videojs-demo
+# Features
+- Play RTMP & HLS videos
+- Auto detect stream & tech
+- Support auto switch streams
+- Support manual switch techs
+- Support custom stream link
 
 # Player Options
 ```
@@ -34,7 +37,6 @@ playerOptions: {
   poster: '/static/images/logo.png'
 }
 ```
-
 
 # Related Posts
 - [WEB直播技术入门及在 Vue 中应用 video.js](https://savokiss.com/tech/web-live-tech-with-vue.html)
