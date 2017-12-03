@@ -1,6 +1,6 @@
 {
   "name": "vue-videojs-demo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Vue.js project",
   "author": "savokiss <jaynaruto@qq.com>",
   "private": true,
@@ -10,11 +10,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "videojs-contrib-hls": "^5.11.0",
+    "videojs-contrib-hls": "^5.12.2",
+    "videojs-contrib-hls.js": "^3.1.0",
     "videojs-flash": "^2.0.1",
-    "vue": "^2.4.2",
+    "vue": "^2.5.9",
     "vue-router": "^2.7.0",
-    "vue-video-player": "^4.0.4"
+    "vue-video-player": "^4.0.6"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

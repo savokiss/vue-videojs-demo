@@ -1,19 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import home from '@/views/home'
+// import live from '@/views/live'
+// import playback from '@/views/playback'
+const live = () => import('@/views/live')
+const playback = () => import('@/views/playback')
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'live',
+      component: live
     }, {
-      path: '/home',
-      name: 'home',
-      component: home
+      path: '/playback',
+      name: 'playback',
+      component: playback
     }
   ]
 })

@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>Vue Video.js Demo</h1>
+  <div class="liveView">
+    <h1>Vue Video.js Live Demo</h1>
     <p>Current Stream: {{ currentStream }}</p>
     <p>Current Tech: {{ currentTech }}</p>
     <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions" @ready="onPlayerReadied">
@@ -15,20 +15,27 @@
 
     <h2>Enter your streams link below</h2>
     <div class="inputWrapper" v-if="currentStream==='RTMP'">
-      RTMP: <input type="text" v-model="streams.rtmp">
+      RTMP: <input type="text" placeholder="enter rtmp url" v-model="streams.rtmp">
     </div>
     <div class="inputWrapper" v-else>
-      HLS: <input type="text" v-model="streams.hls">
+      HLS: <input type="text" placeholder="enter hls url" v-model="streams.hls">
     </div>
     <div class="buttonWrapper">
       <button type="button" @click="enterStream">Apply</button>
     </div>
+
+    <Switcher></Switcher>
   </div>
 </template>
 
 <script>
+import Switcher from '@/components/Switcher'
+
 export default {
-  name: 'hello',
+  name: 'live',
+  components: {
+    Switcher
+  },
   data () {
     return {
       initialized: false,
@@ -38,6 +45,7 @@ export default {
         hls: ''
       },
       playerOptions: {
+        overNative: true,
         autoplay: false,
         controls: true,
         techOrder: ['flash', 'html5'],
@@ -96,23 +104,8 @@ export default {
 </script>
 
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.liveView {
+  position: relative;
 }
 
 .selectWrapper {

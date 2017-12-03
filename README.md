@@ -1,6 +1,6 @@
 # vue-videojs-demo
 
-> Use video.js with vue to play RTMP && HLS streams
+> Use video.js with vue to play RTMP && HLS streams && playback
 
 # Get Started
 
@@ -16,8 +16,9 @@ See: http://savokiss.me/vue-videojs-demo
 - Support auto switch streams
 - Support manual switch techs
 - Support custom stream link
+- Support playback link( see [http://savokiss.me/vue-videojs-demo/#/playback](http://savokiss.me/vue-videojs-demo/#/playback))
 
-# Player Options
+# Live Player Options
 ```
 playerOptions: {
   autoplay: false,
