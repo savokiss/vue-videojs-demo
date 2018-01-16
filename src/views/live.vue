@@ -1,27 +1,43 @@
 <template>
   <div class="liveView">
-    <h1>Vue Video.js Live Demo</h1>
-    <p>Current Stream: {{ currentStream }}</p>
-    <p>Current Tech: {{ currentTech }}</p>
+    <h3>Vue Video.js Live Demo</h3>
+    <p>Current Stream: <span class="badge badge-success">{{ currentStream }}</span></p>
+    <p>Current Tech: <span class="badge badge-info">{{ currentTech }}</span></p>
     <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions" @ready="onPlayerReadied">
     </video-player>
     <div class="selectWrapper">
-      Switch Tech:
-      <select name="switch" v-model="currentTech" @change="changeTech">
-        <option value="Html5">Html5</option>
-        <option value="Flash">Flash</option>
-      </select>
+      Switch Tech：
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="tech" id="html5" value="Html5" v-model="currentTech" @change="changeTech">
+        <label class="form-check-label" for="html5">
+          Html5
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="tech" id="flash" value="Flash" v-model="currentTech" @change="changeTech">
+        <label class="form-check-label" for="flash">
+          Flash
+        </label>
+      </div>
     </div>
 
-    <h2>Enter your streams link below</h2>
-    <div class="inputWrapper" v-if="currentStream==='RTMP'">
-      RTMP: <input type="text" placeholder="enter rtmp url" v-model="streams.rtmp">
-    </div>
-    <div class="inputWrapper" v-else>
-      HLS: <input type="text" placeholder="enter hls url" v-model="streams.hls">
+    <h5>Enter your streams link below</h5>
+    <div class="inputWrapper">
+      <div class="form-group row" v-if="currentStream==='RTMP'">
+        <label for="" class="col-sm-4 col-form-label">RTMP: </label>
+        <div class="col-sm-8">
+          <input class="form-control" type="text" placeholder="RTMP url here" v-model="streams.rtmp">
+        </div>
+      </div>
+      <div class="form-group row" v-else>
+        <label for="" class="col-sm-4 col-form-label">HLS: </label>
+        <div class="col-sm-8">
+          <input class="form-control" type="text" placeholder="HLS url here" v-model="streams.hls">
+        </div>
+      </div>
     </div>
     <div class="buttonWrapper">
-      <button type="button" @click="enterStream">Apply</button>
+      <button class="btn btn-primary" type="button" @click="enterStream">Apply</button>
     </div>
 
     <Switcher></Switcher>
@@ -81,7 +97,7 @@ export default {
   },
   methods: {
     onPlayerReadied () {
-      if(!this.initialized) {
+      if (!this.initialized) {
         this.initialized = true
         this.currentTech = this.player.techName_
       }
@@ -91,10 +107,10 @@ export default {
       this.playerOptions.sources[0].src = this.streams.rtmp
       this.playerOptions.autoplay = true
     },
-    changeTech() {
-      if(this.currentTech === 'Html5') {
+    changeTech () {
+      if (this.currentTech === 'Html5') {
         this.playerOptions.techOrder = ['html5']
-      } else if(this.currentTech === 'Flash') {
+      } else if (this.currentTech === 'Flash') {
         this.playerOptions.techOrder = ['flash']
       }
       this.playerOptions.autoplay = true
@@ -119,12 +135,8 @@ export default {
 }
 
 .inputWrapper {
-  margin: 20px;
-}
-
-
-.inputWrapper input {
-  width: 200px;
+  width: 500px;
+  margin: 0 auto;
 }
 
 .buttonWrapper {

@@ -1,13 +1,20 @@
 <template>
   <div class="playbackView">
-    <h1>Vue Video.js Playback Demo</h1>
-    <p>Current Type: mp4</p>
+    <h3>Vue Video.js Playback Demo</h3>
+    <p>Current Type: <span class="badge badge-success">mp4</span></p>
     <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions">
     </video-player>
 
     <div class="optionsWrapper">
-      <input type="text" placeholder="enter playback url" v-model="url">
-      <button @click="handleApply">apply</button>
+      <div class="form-group row">
+        <label for="" class="col-sm-4 col-form-label">Playback: </label>
+        <div class="col-sm-8">
+          <input class="form-control" type="text" placeholder="playback url here" v-model="url">
+        </div>
+        <div class="w-100 mt-3 text-center">
+          <button class="btn btn-primary" @click="handleApply">apply</button>
+        </div>
+      </div>
     </div>
 
     <Switcher></Switcher>
@@ -48,6 +55,7 @@ export default {
 }
 
 .optionsWrapper {
-  margin-top: 20px;
+  width: 500px;
+  margin: 20px auto;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="Switcher">
-    <button class="switchBtn" @click="toggleLive">{{ isLive ? 'to playback' : 'to live'}}</button>
+    <button class="btn btn-dark switchBtn" @click="toggleLive">{{ isLive ? 'to playback' : 'to live'}}</button>
   </div>
 </template>
 
@@ -25,9 +25,6 @@ export default {
 
 <style scoped>
 .switchBtn {
-  width: 100px;
-  height: 30px;
-  line-height: 30px;
   text-align: center;
   position: absolute;
   right: 40px;
