@@ -3,7 +3,7 @@
     <h3>Vue Video.js Live Demo</h3>
     <p>Current Stream: <span class="badge badge-success">{{ currentStream }}</span></p>
     <p>Current Tech: <span class="badge badge-info">{{ currentTech }}</span></p>
-    <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions" @ready="onPlayerReadied">
+    <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions" @ready="onPlayerReadied" @timeupdate="onTimeupdate">
     </video-player>
     <div class="selectWrapper">
       Switch Tech：
@@ -101,6 +101,10 @@ export default {
         this.initialized = true
         this.currentTech = this.player.techName_
       }
+    },
+    // record current time
+    onTimeupdate (e) {
+      console.log('currentTime', e.cache_.currentTime)
     },
     enterStream () {
       this.playerOptions.sources[1].src = this.streams.hls
