@@ -1,6 +1,6 @@
 <template>
   <div class="Switcher">
-    <button class="btn btn-dark switchBtn" @click="toggleLive">{{ isLive ? 'to playback' : 'to live'}}</button>
+    <button class="btn btn-primary switchBtn" @click="toggleLive">{{ isLive ? 'to playback' : 'to live'}}</button>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
 .switchBtn {
   text-align: center;
   position: absolute;
-  right: 40px;
+  right: 0px;
   top: 10px;
 }
 </style>
