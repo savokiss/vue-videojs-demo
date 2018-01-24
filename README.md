@@ -1,8 +1,10 @@
 # vue-videojs-demo
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsavokiss%2Fvue-videojs-demo.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsavokiss%2Fvue-videojs-demo?ref=badge_shield)
+
 
 > Use video.js with vue to play RTMP && HLS streams && playback
 
-# Get Started
+## Get Started
 
 See: http://savokiss.me/vue-videojs-demo
 
@@ -10,7 +12,7 @@ See: http://savokiss.me/vue-videojs-demo
 
 **Just switch tech to see the differences**
 
-# Features
+## Features
 - Play RTMP & HLS videos
 - Auto detect stream & tech
 - Support auto switch streams
@@ -18,7 +20,7 @@ See: http://savokiss.me/vue-videojs-demo
 - Support custom stream link
 - Support playback link( see [http://savokiss.me/vue-videojs-demo/#/playback](http://savokiss.me/vue-videojs-demo/#/playback))
 
-# Live Player Options
+## Live Player Options
 ```
 playerOptions: {
   autoplay: false,
@@ -39,10 +41,10 @@ playerOptions: {
 }
 ```
 
-# Related Posts
+## Related Posts
 - [WEB直播技术入门及在 Vue 中应用 video.js](https://savokiss.com/tech/web-live-tech-with-vue.html)
 
-# License
-MIT
 
+## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsavokiss%2Fvue-videojs-demo.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsavokiss%2Fvue-videojs-demo?ref=badge_large)
+
