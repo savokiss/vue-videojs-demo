@@ -7,3 +7,7 @@
 # v1.0.3
 - use bootstrap4
 - update vue to 2.5.13
+
+# v1.0.4
+- upgrade bootstrap 4
+- ga
