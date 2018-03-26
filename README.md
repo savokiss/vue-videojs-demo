@@ -19,6 +19,7 @@ See: http://savokiss.me/vue-videojs-demo
 - Support manual switch techs
 - Support custom stream link
 - Support playback link( see [http://savokiss.me/vue-videojs-demo/#/playback](http://savokiss.me/vue-videojs-demo/#/playback))
+- Use local swf file
 
 ## Live Player Options
 ```
@@ -39,6 +40,11 @@ playerOptions: {
   }],
   poster: '/static/images/logo.png'
 }
+```
+
+To use local swf file, copy the swf file in `/static/media/` folder && add:
+```
+   swf: '/static/media/video-js.swf'
 ```
 
 ## Related Posts
