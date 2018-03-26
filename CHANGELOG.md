@@ -11,3 +11,7 @@
 # v1.0.4
 - upgrade bootstrap 4
 - ga
+
+# v1.0.5
+- npm update
+- use local swf
