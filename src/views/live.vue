@@ -72,7 +72,7 @@ export default {
         sourceOrder: true,
         flash: {
           hls: { withCredentials: false },
-          swf: '/static/media/video-js.swf'
+          swf: '/vue-videojs-demo/static/media/video-js.swf'
         },
         html5: { hls: { withCredentials: false } },
         sources: [
