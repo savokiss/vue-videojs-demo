@@ -1,8 +1,12 @@
 <template>
   <div class="liveView">
     <h3>Vue Video.js Live Demo</h3>
-    <p>Current Stream: <span class="badge badge-success">{{ currentStream }}</span></p>
-    <p>Current Tech: <span class="badge badge-info">{{ currentTech }}</span></p>
+    <p>Current Stream:
+      <span class="badge badge-success">{{ currentStream }}</span>
+    </p>
+    <p>Current Tech:
+      <span class="badge badge-info">{{ currentTech }}</span>
+    </p>
     <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions" @ready="onPlayerReadied" @timeupdate="onTimeupdate">
     </video-player>
     <div class="selectWrapper">
@@ -52,7 +56,7 @@ export default {
   components: {
     Switcher
   },
-  data () {
+  data() {
     return {
       initialized: false,
       currentTech: '',
@@ -66,17 +70,24 @@ export default {
         controls: true,
         techOrder: ['flash', 'html5'],
         sourceOrder: true,
-        flash: { hls: { withCredentials: false } },
+        flash: {
+          hls: { withCredentials: false },
+          swf: '/static/media/video-js.swf'
+        },
         html5: { hls: { withCredentials: false } },
-        sources: [{
-          type: 'rtmp/mp4',
-          src: 'rtmp://184.72.239.149/vod/&mp4:BigBuckBunny_115k.mov'
-        }, {
-          withCredentials: false,
-          type: 'application/x-mpegURL',
-          src: 'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
-        }],
-        poster: '/vue-videojs-demo/static/images/logo.png',
+        sources: [
+          {
+            type: 'rtmp/mp4',
+            src: 'rtmp://184.72.239.149/vod/&mp4:BigBuckBunny_115k.mov'
+          },
+          {
+            withCredentials: false,
+            type: 'application/x-mpegURL',
+            src:
+              'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
+          }
+        ],
+        poster: '/vue-videojs-demo/static/images/logo.png'
         // controlBar: {
         //   timeDivider: false, // 时间分割线
         //   durationDisplay: false, // 总时间
@@ -88,30 +99,30 @@ export default {
     }
   },
   computed: {
-    player () {
+    player() {
       return this.$refs.videoPlayer.player
     },
-    currentStream () {
+    currentStream() {
       return this.currentTech === 'Flash' ? 'RTMP' : 'HLS'
     }
   },
   methods: {
-    onPlayerReadied () {
+    onPlayerReadied() {
       if (!this.initialized) {
         this.initialized = true
         this.currentTech = this.player.techName_
       }
     },
     // record current time
-    onTimeupdate (e) {
+    onTimeupdate(e) {
       console.log('currentTime', e.cache_.currentTime)
     },
-    enterStream () {
+    enterStream() {
       this.playerOptions.sources[1].src = this.streams.hls
       this.playerOptions.sources[0].src = this.streams.rtmp
       this.playerOptions.autoplay = true
     },
-    changeTech () {
+    changeTech() {
       if (this.currentTech === 'Html5') {
         this.playerOptions.techOrder = ['html5']
       } else if (this.currentTech === 'Flash') {
