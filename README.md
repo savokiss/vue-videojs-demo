@@ -42,10 +42,12 @@ playerOptions: {
 }
 ```
 
-To use local swf file, copy the swf file in `/static/media/` folder && add:
+To use local swf file, copy the swf file to `/static/media/` folder && add:
 ```
    swf: '/static/media/video-js.swf'
 ```
+
+see source: [live.vue](https://github.com/savokiss/vue-videojs-demo/blob/master/src/views/live.vue)
 
 ## Related Posts
 - [WEB直播技术入门及在 Vue 中应用 video.js](https://savokiss.com/tech/web-live-tech-with-vue.html)
