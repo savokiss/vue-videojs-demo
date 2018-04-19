@@ -49,6 +49,17 @@ To use local swf file, copy the swf file to `/static/media/` folder && add:
 
 see source: [live.vue](https://github.com/savokiss/vue-videojs-demo/blob/master/src/views/live.vue)
 
+## HLS Encryption Issue
+> see [#1150](https://github.com/videojs/videojs-contrib-hls/issues/1150)
+
+if you encounter the hls encryption issue, use the `videojs-contrib-hls.js` plugin instead.
+
+edit `main.js`:
+```javascript
+// import 'videojs-contrib-hls/dist/videojs-contrib-hls'
+import 'videojs-contrib-hls.js/src/videojs.hlsjs'
+```
+
 ## Related Posts
 - [WEB直播技术入门及在 Vue 中应用 video.js](https://savokiss.com/tech/web-live-tech-with-vue.html)
 
