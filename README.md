@@ -22,7 +22,7 @@ See: http://savokiss.me/vue-videojs-demo
 - Use local swf file
 
 ## Live Player Options
-```
+```javascript
 playerOptions: {
   autoplay: false,
   controls: true,
@@ -43,7 +43,7 @@ playerOptions: {
 ```
 
 To use local swf file, copy the swf file to `/static/media/` folder && add:
-```
+```javascript
    swf: '/static/media/video-js.swf'
 ```
 
