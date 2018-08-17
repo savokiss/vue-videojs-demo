@@ -9,13 +9,14 @@ import videojs from 'video.js'
 
 import 'video.js/dist/video-js.css'
 import 'vue-video-player/src/custom-theme.css'
-import 'videojs-flash'
 
 window.videojs = videojs
 
 // 由于 import 必须置顶，此句必须 使用 window.videojs, 所以这里用 require
 require('videojs-contrib-hls/dist/videojs-contrib-hls')
 // require('videojs-contrib-hls.js/src/videojs.hlsjs')
+
+require('videojs-flash')
 
 Vue.config.productionTip = false
 Vue.use(VueVideoPlayer)

@@ -54,7 +54,7 @@ import { SWF_URL, POSTER_URL } from '@/config'
 export default {
   name: 'live',
   components: {
-    Switcher
+    Switcher,
   },
   data() {
     return {
@@ -62,32 +62,32 @@ export default {
       currentTech: '',
       streams: {
         rtmp: '',
-        hls: ''
+        hls: '',
       },
       playerOptions: {
-        overNative: true,
+        height: '360',
+        // overNative: true,
         autoplay: false,
         controls: true,
         techOrder: ['flash', 'html5'],
         sourceOrder: true,
         flash: {
           hls: { withCredentials: false },
-          swf: SWF_URL
+          swf: SWF_URL,
         },
         html5: { hls: { withCredentials: false } },
         sources: [
           {
             type: 'rtmp/mp4',
-            src: 'rtmp://184.72.239.149/vod/&mp4:BigBuckBunny_115k.mov'
+            src: 'rtmp://184.72.239.149/vod/&mp4:BigBuckBunny_115k.mov',
           },
           {
             withCredentials: false,
             type: 'application/x-mpegURL',
-            src:
-              'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
-          }
+            src: 'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8',
+          },
         ],
-        poster: POSTER_URL
+        poster: POSTER_URL,
         // controlBar: {
         //   timeDivider: false, // 时间分割线
         //   durationDisplay: false, // 总时间
@@ -95,7 +95,7 @@ export default {
         //   customControlSpacer: true, // 未知
         //   fullscreenToggle: true // 全屏
         // },
-      }
+      },
     }
   },
   computed: {
@@ -104,7 +104,7 @@ export default {
     },
     currentStream() {
       return this.currentTech === 'Flash' ? 'RTMP' : 'HLS'
-    }
+    },
   },
   methods: {
     onPlayerReadied() {
@@ -128,9 +128,9 @@ export default {
       } else if (this.currentTech === 'Flash') {
         this.playerOptions.techOrder = ['flash']
       }
-      this.playerOptions.autoplay = true
-    }
-  }
+      // this.playerOptions.autoplay = true
+    },
+  },
 }
 </script>
 
