@@ -50,7 +50,7 @@
 
 <script>
 import Switcher from '@/components/Switcher'
-
+import { SWF_URL, POSTER_URL } from '@/config'
 export default {
   name: 'live',
   components: {
@@ -72,7 +72,7 @@ export default {
         sourceOrder: true,
         flash: {
           hls: { withCredentials: false },
-          swf: '/vue-videojs-demo/static/media/video-js.swf'
+          swf: SWF_URL
         },
         html5: { hls: { withCredentials: false } },
         sources: [
@@ -87,7 +87,7 @@ export default {
               'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
           }
         ],
-        poster: '/vue-videojs-demo/static/images/logo.png'
+        poster: POSTER_URL
         // controlBar: {
         //   timeDivider: false, // 时间分割线
         //   durationDisplay: false, // 总时间
