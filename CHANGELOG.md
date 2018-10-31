@@ -15,3 +15,7 @@
 # v1.0.5
 - npm update
 - use local swf
+
+# v1.0.6
+- lock vue-video-player version
+- lock videojs plugin version
