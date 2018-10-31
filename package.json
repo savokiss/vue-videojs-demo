@@ -10,12 +10,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "videojs-contrib-hls": "^5.14.1",
-    "videojs-contrib-hls.js": "^3.2.0",
-    "videojs-flash": "^2.1.0",
+    "videojs-contrib-hls": "5.14.1",
+    "videojs-contrib-hls.js": "3.2.0",
+    "videojs-flash": "2.1.0",
     "vue": "^2.5.16",
     "vue-router": "^2.8.1",
-    "vue-video-player": "^4.0.6"
+    "vue-video-player": "4.0.6"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.6",

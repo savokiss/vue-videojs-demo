@@ -51,6 +51,8 @@
 <script>
 import Switcher from '@/components/Switcher'
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 export default {
   name: 'live',
   components: {
@@ -72,7 +74,7 @@ export default {
         sourceOrder: true,
         flash: {
           hls: { withCredentials: false },
-          swf: '/vue-videojs-demo/static/media/video-js.swf'
+          swf: isProduction ? '/vue-videojs-demo/static/media/video-js.swf' : '/static/media/video-js.swf'
         },
         html5: { hls: { withCredentials: false } },
         sources: [
@@ -83,11 +85,10 @@ export default {
           {
             withCredentials: false,
             type: 'application/x-mpegURL',
-            src:
-              'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
+            src: 'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
           }
         ],
-        poster: '/vue-videojs-demo/static/images/logo.png'
+        poster: isProduction ? '/vue-videojs-demo/static/images/logo.png' : '/static/images/logo.png'
         // controlBar: {
         //   timeDivider: false, // 时间分割线
         //   durationDisplay: false, // 总时间
