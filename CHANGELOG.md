@@ -19,3 +19,4 @@
 # v1.0.6
 - lock vue-video-player version
 - lock videojs plugin version
+- console log version

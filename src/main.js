@@ -10,6 +10,8 @@ import 'videojs-flash'
 import 'videojs-contrib-hls/dist/videojs-contrib-hls'
 // import 'videojs-contrib-hls.js/src/videojs.hlsjs'
 
+import pkg from '../package.json'
+
 Vue.config.productionTip = false
 Vue.use(VueVideoPlayer)
 
@@ -20,3 +22,5 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+console.log(`${pkg.name} v${pkg.version} is running`)
