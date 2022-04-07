@@ -6,7 +6,7 @@
 
 ## Get Started
 
-See: http://savokiss.me/vue-videojs-demo
+See: https://vue-videojs-demo.vercel.app/
 
 **In RTMP you'll see a cartoon && in HLS you'll see a dummy video**
 
@@ -18,7 +18,7 @@ See: http://savokiss.me/vue-videojs-demo
 - Support auto switch streams
 - Support manual switch techs
 - Support custom stream link
-- Support playback link( see [http://savokiss.me/vue-videojs-demo/#/playback](http://savokiss.me/vue-videojs-demo/#/playback))
+- Support playback link( see <https://vue-videojs-demo.vercel.app/#/playback>
 - Use local swf file
 
 ## Live Player Options
