@@ -85,7 +85,7 @@ export default {
           {
             withCredentials: false,
             type: 'application/x-mpegURL',
-            src: 'http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
+            src: 'https://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8'
           }
         ],
         poster: isProduction ? '/vue-videojs-demo/static/images/logo.png' : '/static/images/logo.png'
